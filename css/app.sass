@@ -1,0 +1,71 @@
+$font-title: "Eurostile", sans-serif
+$font-text: "Source Sans Pro", sans-serif
+
+$grey: #F5F5F5
+$dark-grey: #BBBBBB
+$blue: #4A90E2
+
+@font-face
+  font-family: Eurostile
+  src: url('/font/eurostile.ttf')
+
+// resets
+
+body
+  margin: 0
+
+// album-list
+
+.album-list
+  width: 100%
+  // background-color: $grey
+
+// album
+
+.album
+  padding: 30px 0
+  height: 200px
+
+  &:hover
+    background-color: $grey
+
+    > div .title-line .title
+      color: $blue
+
+  > div
+    position: relative
+    height: 200px
+    width: 700px
+    margin: 0 auto
+
+    img
+      width: 200px
+      height: 200px
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+
+    .title-line
+      position: absolute
+      top: 0
+      right: 0
+      width: 500px
+      padding-top: 15px
+
+      .title
+        font-family: $font-title
+        font-size: 30px
+        color: $dark-grey
+        line-height: 36px
+        padding-left: 45px
+
+      .years
+        float: right
+        color: $dark-grey
+        font-size: 16px
+        line-height: 36px
+        font-family: $font-text
+
+      .description
+        color: $dark-grey
+        font-size: 16px
+        font-family: $font-text
+        padding-left: 45px
