@@ -11,7 +11,7 @@ mkdir -p $LOG_DIR
 case $1 in
   run )
     lsc -wbco build/js src >> $LOG_DIR/lsc.log 2>&1 &
-    echo $! > $PID_DIR/cjsx.pid
+    echo $! > $PID_DIR/lsc.pid
     ruby -run -e httpd . -p $PORT >> $LOG_DIR/httpd.log 2>&1 &
     echo $! > $PID_DIR/httpd.pid
     sass --watch css:build/css >> $LOG_DIR/sass.log 2>&1 &

@@ -5,6 +5,8 @@ $grey: #F5F5F5
 $dark-grey: #BBBBBB
 $blue: #4A90E2
 
+$panel-width: 700px
+
 @font-face
   font-family: Eurostile
   src: url('/font/eurostile.ttf')
@@ -14,11 +16,13 @@ $blue: #4A90E2
 body
   margin: 0
 
+a
+  text-decoration: none
+
 // album-list
 
 .album-list
   width: 100%
-  // background-color: $grey
 
 // album
 
@@ -26,16 +30,19 @@ body
   padding: 30px 0
   height: 200px
 
-  &:hover
+  &:hover, &.active
     background-color: $grey
 
     > div .title-line .title
       color: $blue
 
+  &.active
+    margin-top: 50px
+
   > div
     position: relative
     height: 200px
-    width: 700px
+    width: $panel-width
     margin: 0 auto
 
     img
@@ -47,7 +54,7 @@ body
       position: absolute
       top: 0
       right: 0
-      width: 500px
+      width: $panel-width - 200px
       padding-top: 15px
 
       .title
@@ -69,3 +76,47 @@ body
         font-size: 16px
         font-family: $font-text
         padding-left: 45px
+
+// song-list
+
+.song-list
+  margin-top: 30px
+  width: 100%
+
+// song
+
+.song
+  > div
+    position: relative
+    width: $panel-width
+    margin: 0 auto
+
+    > div
+      width: $panel-width - 245px
+      margin-left: 220px
+      padding: 15px 20px 15px 25px
+
+      &:hover
+        background-color: $grey
+        border-left: 5px solid $dark-grey
+        margin-left: 215px
+
+      .language
+        float: right
+        line-height: 25px
+        font-family: $font-text
+        text-transform: uppercase
+        color: $dark-grey
+
+      .title
+        font-family: $font-text
+        font-size: 25px
+        line-height: 25px
+        color: $dark-grey
+        margin-top: 0
+
+      .description
+        font-family: $font-text
+        font-size: 16px
+        color: $dark-grey
+        margin-bottom: 0

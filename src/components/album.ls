@@ -1,12 +1,13 @@
 {div, a, span, p, img} = React.DOM
+{compact, join} = require 'prelude-ls'
 
 album = React.create-class do
   handleClick: ->
-    @props.on-click(.)
+    @props.on-click(it)
 
   render: ->
     a {href: '#', onClick: @handleClick},
-      div {class-name: 'album'},
+      div {class-name: join ' ' compact ['album', 'active' if @props.active]},
         div null,
           img {src: @props.album.cover_url},
             div {class-name: 'title-line'},
