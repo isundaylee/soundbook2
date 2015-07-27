@@ -1,13 +1,16 @@
 Album = React.createClass
+  handleClick: (e) ->
+    @props.onClick(e)
+
   render: ->
-    <a href="#">
+    <a href="#" onClick={@handleClick} ref="">
       <div className='album'>
         <div>
-          <img src={this.props.album.cover_url} />
+          <img src={@props.album.cover_url} />
           <div className='title-line'>
-            <span className='title'>{this.props.album.title}</span>
-            <span className='years'>{this.props.album.years}</span>
-            <p className='description'>{this.props.album.description}</p>
+            <span className='title'>{@props.album.title}</span>
+            <span className='years'>{@props.album.years}</span>
+            <p className='description'>{@props.album.description}</p>
           </div>
         </div>
       </div>
