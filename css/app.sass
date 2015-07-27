@@ -7,6 +7,8 @@ $blue: #4A90E2
 
 $panel-width: 700px
 
+$transition: .4s steps(20)
+
 @font-face
   font-family: Eurostile
   src: url('/font/eurostile.ttf')
@@ -24,6 +26,29 @@ a
 .album-list
   width: 100%
 
+  a
+    overflow: auto
+
+.album-list-transition-leave
+  opacity: 1
+  max-height: 260px
+
+  &.album-list-transition-leave-active
+    opacity: 0.01
+    transition: $transition
+    max-height: 0
+
+// album-list animation
+
+.album-list-transition-enter
+  opacity: 0.01
+  max-height: 0
+
+  &.album-list-transition-enter-active
+    opacity: 1
+    max-height: 260px
+    transition: $transition
+
 // album
 
 .album
@@ -38,6 +63,7 @@ a
 
   &.active
     margin-top: 50px
+    transition: $transition
 
   > div
     position: relative
